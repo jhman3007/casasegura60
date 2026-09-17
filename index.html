@@ -1,1 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Casa Segura 60+ | Adaptación de viviendas para adultos mayores</title>
+
+    <meta name="description"
+          content="Adaptamos viviendas para adultos mayores, mejorando la seguridad, comodidad e independencia dentro del hogar.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo span {
+            color: #d62828;
+        }
+
+        .hero {
+            background: #f3eee7;
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            max-width: 900px;
+            margin: auto;
+            color: #333;
+        }
+
+        .hero h1 span {
+            color: #d62828;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 25px auto;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-contact {
+            background: #333;
+            color: white;
+        }
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .risk {
+            background: #fff1f1;
+            border-left: 7px solid #d62828;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .risk h2 {
+            color: #d62828;
+            margin-bottom: 10px;
+        }
+
+        .risk p {
+            font-size: 18px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #eeeeee;
+        }
+
+        .card .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .services {
+            background: #f7f7f7;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+        }
+
+        .independence {
+            background: #f3eee7;
+            text-align: center;
+        }
+
+        .independence h2 {
+            font-size: 36px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .independence p {
+            max-width: 800px;
+            margin: 25px auto;
+            font-size: 19px;
+        }
+
+        .contact {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            display: grid;
+            gap: 18px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cccccc;
+            border-radius: 7px;
+            font-size: 16px;
+            margin-top: 6px;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            padding: 16px;
+            background: #25D366;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .email {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .email a {
+            color: #333;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .benefits,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+
+            header {
+                padding: 15px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        Casa Segura <span>60+</span>
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>
+        Una casa más segura para vivir con
+        <span>mayor independencia.</span>
+    </h1>
+
+    <p>
+        Adaptamos viviendas para adultos mayores y personas con
+        movilidad reducida, buscando reducir riesgos y mejorar
+        la comodidad y calidad de vida dentro del hogar.
+    </p>
+
+    <div class="buttons">
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/569XXXXXXXX"
+           target="_blank">
+            WhatsApp
+        </a>
+
+        <a class="btn btn-contact"
+           href="#contacto">
+            Solicitar evaluación
+        </a>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="risk">
+
+        <h2>⚠️ Un hogar puede esconder riesgos</h2>
+
+        <p>
+            Baños resbaladizos, desniveles, escaleras, iluminación
+            insuficiente y otros elementos pueden aumentar el riesgo
+            de accidentes dentro de la vivienda.
+        </p>
+
+    </div>
+
+    <div class="section-title">
+
+        <h2>¿Por qué adaptar la vivienda?</h2>
+
+        <p>
+            No se trata solamente de hacer una vivienda más segura.
+            Se trata de permitir que nuestros seres queridos puedan
+            desenvolverse con mayor confianza e independencia.
+        </p>
+
+    </div>
+
+    <div class="benefits">
+
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Mayor seguridad</h3>
+            <p>
+                Identificamos y reducimos riesgos presentes
+                en los espacios cotidianos.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">❤️</div>
+            <h3>Mayor tranquilidad</h3>
+            <p>
+                Buscamos que familiares y usuarios tengan
+                mayor confianza dentro del hogar.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Mayor independencia</h3>
+            <p>
+                Adaptamos los espacios para facilitar las
+                actividades de la vida diaria.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services">
+
+    <div class="section-title">
+
+        <h2>¿Qué podemos adaptar?</h2>
+
+        <p>
+            Evaluamos las necesidades de cada vivienda y
+            proponemos soluciones según las características
+            de cada persona.
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service">
+            <h3>🛁 Baños</h3>
+            <p>
+                Soluciones para facilitar el acceso y reducir
+                riesgos en uno de los espacios más sensibles
+                de la vivienda.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>🚪 Accesos</h3>
+            <p>
+                Mejoras en accesos, puertas, desniveles y
+                circulación dentro de la vivienda.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>🛏️ Dormitorios</h3>
+            <p>
+                Adaptaciones orientadas a facilitar el
+                desplazamiento y las actividades cotidianas.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>🍳 Cocina</h3>
+            <p>
+                Propuestas para mejorar accesibilidad,
+                seguridad y comodidad.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>💡 Iluminación</h3>
+            <p>
+                Mejoras para favorecer una circulación más
+                segura dentro del hogar.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>🏡 Evaluación integral</h3>
+            <p>
+                Analizamos la vivienda para detectar
+                oportunidades de adaptación.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="independence">
+
+    <h2>
+        Mejoramos la calidad de vida de nuestros seres queridos,
+        entregándoles mayor seguridad e independencia.
+    </h2>
+
+    <p>
+        Una adaptación bien pensada puede permitir que una persona
+        continúe realizando actividades cotidianas dentro de su
+        propio hogar con mayor confianza.
+    </p>
+
+</section>
+
+
+<section id="contacto">
+
+    <div class="section-title">
+
+        <h2>Solicita una evaluación</h2>
+
+        <p>
+            Cuéntanos brevemente qué necesitas y nos pondremos
+            en contacto contigo.
+        </p>
+
+    </div>
+
+    <div class="contact">
+
+        <form action="mailto:contacto@casasegura60.cl"
+              method="post"
+              enctype="text/plain">
+
+            <div>
+                <label>Nombre y apellido</label>
+                <input type="text"
+                       name="Nombre"
+                       required>
+            </div>
+
+            <div>
+                <label>Teléfono / WhatsApp</label>
+                <input type="tel"
+                       name="Telefono"
+                       required>
+            </div>
+
+            <div>
+                <label>Correo electrónico</label>
+                <input type="email"
+                       name="Correo"
+                       required>
+            </div>
+
+            <div>
+                <label>Comuna</label>
+                <input type="text"
+                       name="Comuna">
+            </div>
+
+            <div>
+                <label>Tipo de vivienda</label>
+
+                <select name="Vivienda">
+
+                    <option value="">
+                        Selecciona una opción
+                    </option>
+
+                    <option>
+                        Casa
+                    </option>
+
+                    <option>
+                        Departamento
+                    </option>
+
+                    <option>
+                        Otro
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>
+                    ¿Qué espacios necesitas adaptar?
+                </label>
+
+                <textarea name="Necesidad"
+                          placeholder="Cuéntanos brevemente qué necesitas mejorar...">
+                </textarea>
+
+            </div>
+
+            <button type="submit">
+                Solicitar evaluación
+            </button>
+
+        </form>
+
+        <div class="email">
+
+            También puedes escribirnos directamente a:
+
+            <br>
+
+            <a href="mailto:contacto@casasegura60.cl">
+                contacto@casasegura60.cl
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Casa Segura 60+ — Adaptación y seguridad del hogar
+    </p>
+
+</footer>
+
+</body>
+</html>
