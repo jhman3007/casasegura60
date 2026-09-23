@@ -5,56 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa Segura 60+</title>
   <style>
-    /* Estilos mínimos para mantener la estructura actual y corregir el centrado */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Corrección específica para centrar la grilla de Tecnología */
-    #tecnologia > div > div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: stretch;
-      gap: 20px;
-    }
+/* Estilos para el nuevo Logo Oficial */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
 
-    #tecnologia > div > div > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-sizing: border-box;
-    }
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    #tecnologia img {
-      display: block;
-      margin: 0 auto 10px auto;
-      max-width: 100%;
-      height: auto;
-    }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #1b2a38;
+  letter-spacing: 0.5px;
+}
+
+.logo-title span {
+  color: #689f38; /* Color verde del 60+ */
+}
+
+.logo-slogan {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #555555;
+  letter-spacing: 0.3px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* Alineación del Header */
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
   </style>
 </head>
 <body>
 
 <header>
- <div>
-  <a href="#inicio">
-   <div><span>♥</span></div>
-   <div><b>CASA<br>SEGURA</b><span>60+</span></div>
-  </a>
-  <nav>
-   <a href="#inicio">INICIO</a>
-   <a href="#hacemos">¿QUÉ HACEMOS?</a>
-   <a href="#adaptaciones">ADAPTACIONES</a>
-   <a href="#tecnologia">TECNOLOGÍA</a>
-   <a href="#proceso">PROCESO</a>
-   <a href="#nosotros">NOSOTROS</a>
-   <a href="#contacto">CONTACTO</a>
-   
-   <a href="https://wa.me/56941928639" target="_blank">WHATSAPP<br>Solicita evaluación</a>
-  </nav>
- </div>
+<header>
+  <div>
+    <!-- LOGO OFICIAL CASA SEGURA 60+ -->
+    <a href="#inicio" class="logo-container">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" width="45" height="45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Techo y paredes de la casa -->
+          <path d="M50 12 L12 45 L22 45 L22 85 L78 85 L78 45 L88 45 Z" stroke="#1b2a38" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Corazón interno -->
+          <path d="M50 68 C35 55 30 42 38 34 C44 28 50 35 50 35 C50 35 56 28 62 34 C70 42 65 55 50 68 Z" fill="#689f38"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-title">CASA SEGURA <span>60+</span></div>
+        <div class="logo-slogan">VIVIENDAS ADAPTADAS, VIDAS MÁS SEGURAS.</div>
+      </div>
+    </a>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav>
+      <a href="#inicio">INICIO</a>
+      <a href="#hacemos">¿QUÉ HACEMOS?</a>
+      <a href="#adaptaciones">ADAPTACIONES</a>
+      <a href="#tecnologia">TECNOLOGÍA</a>
+      <a href="#proceso">PROCESO</a>
+      <a href="#nosotros">NOSOTROS</a>
+      <a href="#contacto">CONTACTO</a>
+      
+      <a href="https://wa.me/56941928639" target="_blank" class="nav-whatsapp">
+        WHATSAPP<br>Solicita evaluación
+      </a>
+    </nav>
+  </div>
 </header>
 
 <main>
