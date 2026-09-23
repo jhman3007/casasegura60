@@ -1,228 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casa Segura 60+ | Viviendas adaptadas, vidas más seguras</title>
-<meta name="description" content="Evaluamos, diseñamos y adaptamos viviendas para adultos mayores y personas con movilidad reducida. Seguridad, accesibilidad, tecnología e independencia dentro del hogar.">
-<style>
-:root{
- --navy:#06203b;--green:#176f2c;--green2:#269b3b;--red:#c9252c;
- --light:#f7f8f6;--line:#e3e6e3;--text:#16283a;--muted:#586575;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.45}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,94%);margin:auto}
-header{height:76px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
-.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:22px;line-height:.9}
-.logo-mark{width:48px;height:48px;border:4px solid var(--navy);border-radius:7px 7px 11px 11px;position:relative;display:grid;place-items:center;color:#fff}
-.logo-mark:before{content:"";position:absolute;width:29px;height:29px;background:var(--red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);top:8px}
-.logo-mark span{position:relative;font-size:18px;color:#fff;z-index:2}
-.logo-text b{display:block;color:var(--navy)}
-.logo-text span{color:var(--green)}
-.menu{display:flex;align-items:center;gap:22px;font-size:12px;font-weight:800}
-.menu a:hover{color:var(--green)}
-.wa{background:var(--green);color:#fff;border-radius:13px;padding:11px 16px;font-weight:900;font-size:13px}
-.hero{min-height:445px;background:linear-gradient(90deg,#fff 0%,#fff 38%,rgba(255,255,255,.78) 49%,rgba(255,255,255,0) 68%),url("imagenes/hero-pareja.jpg") right center/auto 100% no-repeat,#fff}
-.hero-grid{min-height:445px;display:flex;align-items:center}
-.hero-copy{width:52%;padding:35px 0}
-.eyebrow{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:6px}
-.hero h1{font-size:40px;line-height:1.02;text-transform:uppercase;color:var(--red);max-width:580px;margin-bottom:14px}
-.hero p{font-size:16px;max-width:560px;color:var(--navy);font-weight:600}
-.hero p strong{color:var(--red)}
-.hero-actions{margin:18px 0 12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:900}
-.btn-green{background:var(--green);color:#fff}
-.hero-note{font-size:12px;font-weight:700;color:var(--navy);max-width:350px}
-.stats{background:var(--navy);color:#fff;border-radius:15px;padding:18px 25px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:550px;margin:0 0 0 auto;transform:translateY(-15px)}
-.stat{text-align:center;border-right:1px solid rgba(255,255,255,.35)}
-.stat:last-child{border:0}.stat-icon{font-size:26px}.stat b{display:block;font-size:20px}.stat span{font-size:12px}
-.section{padding:20px 0 28px}.section-title{text-align:center;font-size:26px;font-weight:900;margin-bottom:18px;color:var(--navy);text-transform:uppercase}
-.evaluate{display:grid;grid-template-columns:repeat(8,1fr);gap:0;border-bottom:1px solid var(--line);padding-bottom:18px}
-.eval{text-align:center;padding:0 9px;border-right:1px solid var(--line)}
-.eval:last-child{border:0}.eval-icon{font-size:32px;color:var(--green);height:42px}.eval b{display:block;font-size:13px;color:var(--green);margin:3px 0}.eval p{font-size:10px;color:var(--text)}
-.doing{background:#f6f7f6;border-radius:16px;padding:12px}
-.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{background:#fff;border:1px solid #e7e9e7;border-radius:12px;overflow:hidden;box-shadow:0 5px 18px rgba(0,0,0,.04)}
-.card img{width:100%;height:126px;object-fit:cover;display:block}.card-body{padding:12px}.card h3{font-size:14px;color:var(--navy);text-transform:uppercase}.card p{font-size:11px;margin-top:5px;color:#394b5d}.more{display:block;color:var(--green);font-size:11px;font-weight:900;margin-top:8px}
-.tech{padding-top:12px}
-.tech-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
-.tech-item{text-align:center;display:flex;flex-direction:column;align-items:center}
-.tech-item img{
- width:100%;
- height:120px;
- display:block;
- object-fit:contain;
- object-position:center;
- margin:0 auto 8px;
- padding:6px;
-}
-.tech-item b{display:block;font-size:11px;color:var(--green);text-transform:uppercase}
-.tech-item p{font-size:9px;color:#44515e}
-.process{padding-top:8px}.process-line{display:grid;grid-template-columns:repeat(7,1fr);position:relative}.process-line:before{content:"";position:absolute;left:7%;right:7%;top:21px;border-top:2px solid var(--green)}
-.step{text-align:center;position:relative;z-index:2}.step .circle{width:43px;height:43px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 5px;font-weight:900;border:4px solid #fff;box-shadow:0 0 0 1px var(--green)}.step b{display:block;font-size:10px}.step p{font-size:9px;color:#4d5965;max-width:105px;margin:auto}
-.about-cta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}.about{background:#f4f5f4;border-radius:15px;overflow:hidden;display:grid;grid-template-columns:45% 55%}.about img{width:100%;height:100%;object-fit:cover;min-height:210px}.about-copy{padding:24px}.about-copy h2{font-size:25px;color:var(--navy);text-transform:uppercase;margin-bottom:8px}.about-copy p{font-size:12px;margin-bottom:9px}.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.tag{font-size:9px;font-weight:800;color:var(--green)}
-.cta{background:var(--navy);color:#fff;border-radius:15px;padding:28px;display:flex;flex-direction:column;justify-content:center}.cta h2{font-size:26px;text-transform:uppercase;line-height:1.08;margin-bottom:9px}.cta p{font-size:13px}.cta .btn{background:var(--green2);margin-top:16px;width:max-content}
-.contact{padding:45px 0}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}.contact h2{font-size:32px;color:var(--navy);margin-bottom:10px}.contact p{color:var(--muted)}form{border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.06)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field.full{grid-column:1/-1}label{display:block;font-size:11px;font-weight:900;margin-bottom:4px}input,select,textarea{width:100%;padding:11px;border:1px solid #ccd3d7;border-radius:8px;font:inherit}textarea{min-height:100px}.submit{border:0;margin-top:13px;cursor:pointer;width:100%;background:var(--green);color:#fff}
-footer{background:#06203b;color:#fff;padding:25px 0}.footer{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:25px}.footer h3{font-size:12px;margin-bottom:7px}.footer p,.footer a{font-size:10px;color:#d9e1e8;display:block;margin:3px 0}.footer-logo{font-size:22px;font-weight:900}.footer-logo span{color:#57b45f}.copyright{text-align:center;border-top:1px solid rgba(255,255,255,.15);padding-top:14px;margin-top:18px;font-size:9px;color:#cbd5dd}
-.float{position:fixed;right:18px;bottom:18px;width:55px;height:55px;border-radius:50%;background:var(--green2);color:#fff;display:grid;place-items:center;font-size:25px;font-weight:900;box-shadow:0 7px 20px rgba(0,0,0,.2);z-index:80}
-@media(max-width:900px){
- .menu a:not(.wa){display:none}.hero{background:linear-gradient(90deg,#fff 0%,#fff 52%,rgba(255,255,255,.75) 65%,rgba(255,255,255,0) 100%),url("imagenes/hero-pareja.jpg") center/cover}
- .hero-copy{width:65%}.evaluate{grid-template-columns:repeat(4,1fr);row-gap:15px}.cards4{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(4,1fr)}.tech-item img{height:115px}.process-line{grid-template-columns:repeat(4,1fr);row-gap:15px}.process-line:before{display:none}.about-cta,.contact-grid{grid-template-columns:1fr}.footer{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- header{height:66px}.logo{font-size:18px}.logo-mark{width:39px;height:39px}.wa{padding:9px 11px;font-size:11px}.hero,.hero-grid{min-height:610px}.hero{background:linear-gradient(180deg,#fff 0%,#fff 47%,rgba(255,255,255,.65) 67%,rgba(255,255,255,0) 100%),url("imagenes/hero-pareja.jpg") center bottom/100% auto no-repeat}.hero-copy{width:100%;padding:35px 0}.hero h1{font-size:34px}.hero p{font-size:14px}.stats{transform:none;margin-top:22px;grid-template-columns:1fr 1fr 1fr;padding:12px}.stat b{font-size:15px}.stat span{font-size:9px}.evaluate{grid-template-columns:repeat(2,1fr)}.cards4{grid-template-columns:1fr 1fr}.card img{height:105px}.tech-grid{grid-template-columns:repeat(2,1fr)}.tech-item img{height:125px}.process-line{grid-template-columns:repeat(2,1fr)}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer{grid-template-columns:1fr 1fr}.section-title{font-size:22px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Segura 60+</title>
+  <style>
+    /* Estilos mínimos para mantener la estructura actual y corregir el centrado */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Corrección específica para centrar la grilla de Tecnología */
+    #tecnologia > div > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    #tecnologia > div > div > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    #tecnologia img {
+      display: block;
+      margin: 0 auto 10px auto;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
 
 <header>
- <div class="container nav">
-  <a class="logo" href="#inicio">
-   <div class="logo-mark"><span>♥</span></div>
-   <div class="logo-text"><b>CASA<br>SEGURA</b><span>60+</span></div>
+ <div>
+  <a href="#inicio">
+   <div><span>♥</span></div>
+   <div><b>CASA<br>SEGURA</b><span>60+</span></div>
   </a>
-  <nav class="menu">
-   <a href="#inicio">INICIO</a><a href="#hacemos">¿QUÉ HACEMOS?</a><a href="#adaptaciones">ADAPTACIONES</a><a href="#tecnologia">TECNOLOGÍA</a><a href="#proceso">PROCESO</a><a href="#nosotros">NOSOTROS</a><a href="#contacto">CONTACTO</a>
-   <!-- IMPORTANTE: reemplazar 569XXXXXXXX por el número real de WhatsApp antes de publicar -->
-   <a class="wa" href="https://wa.me/569XXXXXXXX" target="_blank">WHATSAPP<br>Solicita evaluación</a>
+  <nav>
+   <a href="#inicio">INICIO</a>
+   <a href="#hacemos">¿QUÉ HACEMOS?</a>
+   <a href="#adaptaciones">ADAPTACIONES</a>
+   <a href="#tecnologia">TECNOLOGÍA</a>
+   <a href="#proceso">PROCESO</a>
+   <a href="#nosotros">NOSOTROS</a>
+   <a href="#contacto">CONTACTO</a>
+   
+   <a href="https://wa.me/56941928639" target="_blank">WHATSAPP<br>Solicita evaluación</a>
   </nav>
  </div>
 </header>
 
-<main id="inicio">
-<section class="hero">
- <div class="container hero-grid">
-  <div class="hero-copy">
-   <div class="eyebrow">A MEDIDA QUE PASA EL TIEMPO,</div>
+<main>
+<section id="inicio">
+ <div>
+  <div>
+   <div>A MEDIDA QUE PASA EL TIEMPO,</div>
    <h1>TU CASA PUEDE SER<br>TU MAYOR RIESGO.</h1>
    <p>Evaluamos, diseñamos y adaptamos viviendas para prevenir <strong>accidentes</strong> y mejorar la calidad de vida de nuestros seres queridos, dándoles mayor independencia, seguridad y tranquilidad.</p>
-   <div class="hero-actions"><a class="btn btn-green" href="https://wa.me/569XXXXXXXX" target="_blank">SOLICITA TU EVALUACIÓN<br><small>por WhatsApp</small></a></div>
-   <div class="hero-note">♧ Ayudamos a familias a prevenir accidentes y emergencias en el hogar.</div>
+   <div><a href="https://wa.me/56941928639" target="_blank">SOLICITA TU EVALUACIÓN<br><small>por WhatsApp</small></a></div>
+   <div>♧ Ayudamos a familias a prevenir accidentes y emergencias en el hogar.</div>
   </div>
  </div>
 </section>
 
-<section class="section" id="adaptaciones">
- <div class="container">
-  <div class="stats">
-   <div class="stat"><div class="stat-icon">🛡</div><b>PREVENIR</b><span>ayuda a reducir riesgos dentro del hogar.</span></div>
-   <div class="stat"><div class="stat-icon">✓</div><b>ADAPTAR</b><span>facilita el uso seguro de los espacios.</span></div>
-   <div class="stat"><div class="stat-icon">♥</div><b>AUTONOMÍA</b><span>un hogar pensado para vivir mejor.</span></div>
+<section id="adaptaciones">
+ <div>
+  <div>
+   <div><div>🛡</div><b>PREVENIR</b><span>ayuda a reducir riesgos dentro del hogar.</span></div>
+   <div><div>✓</div><b>ADAPTAR</b><span>facilita el uso seguro de los espacios.</span></div>
+   <div><div>♥</div><b>AUTONOMÍA</b><span>un hogar pensado para vivir mejor.</span></div>
   </div>
-  <h2 class="section-title">¿QUÉ EVALUAMOS?</h2>
-  <div class="evaluate">
-   <div class="eval"><div class="eval-icon">🚿</div><b>BAÑOS</b><p>Duchas, barras de apoyo, pisos antideslizantes y accesibilidad.</p></div>
-   <div class="eval"><div class="eval-icon">♟</div><b>ESCALERAS</b><p>Pasamanos, iluminación, seguridad en subida y bajada.</p></div>
-   <div class="eval"><div class="eval-icon">▥</div><b>DESNIVELES</b><p>Umbrales, cambios de nivel y accesos sin obstáculos.</p></div>
-   <div class="eval"><div class="eval-icon">💡</div><b>ILUMINACIÓN</b><p>Mejoramos la visibilidad y prevenimos accidentes por baja iluminación.</p></div>
-   <div class="eval"><div class="eval-icon">🚪</div><b>ACCESOS</b><p>Puertas, pasillos y circulaciones cómodas y seguras.</p></div>
-   <div class="eval"><div class="eval-icon">🛏</div><b>DORMITORIOS</b><p>Altura de cama, espacios seguros y cómodos.</p></div>
-   <div class="eval"><div class="eval-icon">▣</div><b>COCINA</b><p>Distribución, alcance seguro y facilidad de uso.</p></div>
-   <div class="eval"><div class="eval-icon">🛡</div><b>SEGURIDAD</b><p>Sistemas de alerta, tecnología y prevención.</p></div>
-  </div>
- </div>
-</section>
-
-<section class="section" id="hacemos">
- <div class="container doing">
-  <h2 class="section-title">¿QUÉ HACEMOS?</h2>
-  <div class="cards4">
-   <article class="card"><img src="imagenes/bano-seguro.jpg" alt="Baño adaptado para mayor seguridad" loading="lazy"><div class="card-body"><h3>BAÑO SEGURO</h3><p>Adaptamos tu baño para prevenir accidentes y facilitar la higiene diaria.</p><a class="more" href="#contacto">Quiero saber más →</a></div></article>
-   <article class="card"><img src="imagenes/accesibilidad.jpg" alt="Accesibilidad y movilidad segura en la vivienda" loading="lazy"><div class="card-body"><h3>ACCESIBILIDAD</h3><p>Eliminamos barreras arquitectónicas para una movilidad segura.</p><a class="more" href="#contacto">Quiero saber más →</a></div></article>
-   <article class="card"><img src="imagenes/escaleras.jpg" alt="Escaleras adaptadas para prevenir accidentes" loading="lazy"><div class="card-body"><h3>PREVENCIÓN DE ACCIDENTES</h3><p>Pasamanos, iluminación, pisos antideslizantes y más.</p><a class="more" href="#contacto">Quiero saber más →</a></div></article>
-   <article class="card"><img src="imagenes/dormitorio.jpg" alt="Dormitorio adaptado para una persona mayor" loading="lazy"><div class="card-body"><h3>ADAPTACIÓN INTEGRAL</h3><p>Adaptamos toda la vivienda a las necesidades presentes y futuras.</p><a class="more" href="#contacto">Quiero saber más →</a></div></article>
+  <h2>¿QUÉ EVALUAMOS?</h2>
+  <div>
+   <div><div>🚿</div><b>BAÑOS</b><p>Duchas, barras de apoyo, pisos antideslizantes y accesibilidad.</p></div>
+   <div><div>♟</div><b>ESCALERAS</b><p>Pasamanos, iluminación, seguridad en subida y bajada.</p></div>
+   <div><div>▥</div><b>DESNIVELES</b><p>Umbrales, cambios de nivel y accesos sin obstáculos.</p></div>
+   <div><div>💡</div><b>ILUMINACIÓN</b><p>Mejoramos la visibilidad y prevenimos accidentes por baja iluminación.</p></div>
+   <div><div>🚪</div><b>ACCESOS</b><p>Puertas, pasillos y circulaciones cómodas y seguras.</p></div>
+   <div><div>🛏</div><b>DORMITORIOS</b><p>Altura de cama, espacios seguros y cómodos.</p></div>
+   <div><div>▣</div><b>COCINA</b><p>Distribución, alcance seguro y facilidad de uso.</p></div>
+   <div><div>🛡</div><b>SEGURIDAD</b><p>Sistemas de alerta, tecnología y prevención.</p></div>
   </div>
  </div>
 </section>
 
-<section class="section tech" id="tecnologia">
- <div class="container">
-  <h2 class="section-title">TECNOLOGÍA Y SEGURIDAD PARA TU TRANQUILIDAD</h2>
-  <div class="tech-grid">
-   <div class="tech-item"><img src="imagenes/equipo-camara.jpg" alt="Cámara de seguridad para el hogar" loading="lazy"><b>CÁMARAS CON VISIÓN NOCTURNA</b><p>Monitorea tu hogar desde tu celular.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-boton.jpg" alt="Botón antipánico para el hogar" loading="lazy"><b>BOTÓN ANTIPÁNICO</b><p>Alerta inmediata a familiares.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-apertura.jpg" alt="Sensor de apertura para puertas y ventanas" loading="lazy"><b>SENSORES DE APERTURA</b><p>Detectan puertas y ventanas.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-movimiento.jpg" alt="Sensor de movimiento para el hogar" loading="lazy"><b>SENSORES DE MOVIMIENTO</b><p>Seguridad activa en tu hogar.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-humo.jpg" alt="Detector de humo para el hogar" loading="lazy"><b>DETECTORES DE HUMO</b><p>Prevención de incendios y emergencias.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-videoportero.jpg" alt="Videoportero para acceso seguro" loading="lazy"><b>VIDEO PORTERO</b><p>Comunícate y visualiza quién llega.</p></div>
-   <div class="tech-item"><img src="imagenes/equipo-luz.jpg" alt="Sistema de iluminación automática" loading="lazy"><b>ILUMINACIÓN AUTOMÁTICA</b><p>Más visibilidad, más seguridad.</p></div>
+<section id="hacemos">
+ <div>
+  <h2>¿QUÉ HACEMOS?</h2>
+  <div>
+   <article><img alt="Baño adaptado para mayor seguridad" loading="lazy" src="imagenes/bano-seguro.jpg"><div><h3>BAÑO SEGURO</h3><p>Adaptamos tu baño para prevenir accidentes y facilitar la higiene diaria.</p><a href="#contacto">Quiero saber más →</a></div></article>
+   <article><img alt="Accesibilidad y movilidad segura en la vivienda" loading="lazy" src="imagenes/accesibilidad.jpg"><div><h3>ACCESIBILIDAD</h3><p>Eliminamos barreras arquitectónicas para una movilidad segura.</p><a href="#contacto">Quiero saber más →</a></div></article>
+   <article><img alt="Escaleras adaptadas para prevenir accidentes" loading="lazy" src="imagenes/escaleras.jpg"><div><h3>PREVENCIÓN DE ACCIDENTES</h3><p>Pasamanos, iluminación, pisos antideslizantes y más.</p><a href="#contacto">Quiero saber más →</a></div></article>
+   <article><img alt="Dormitorio adaptado para una persona mayor" loading="lazy" src="imagenes/dormitorio.jpg"><div><h3>ADAPTACIÓN INTEGRAL</h3><p>Adaptamos toda la vivienda a las necesidades presentes y futuras.</p><a href="#contacto">Quiero saber más →</a></div></article>
   </div>
  </div>
 </section>
 
-<section class="section process" id="proceso">
- <div class="container">
-  <h2 class="section-title">NUESTRO PROCESO</h2>
-  <div class="process-line">
-   <div class="step"><div class="circle">01</div><b>CONTÁCTANOS</b><p>Escríbenos por WhatsApp y cuéntanos tu caso.</p></div>
-   <div class="step"><div class="circle">02</div><b>EVALUAMOS</b><p>Visitamos tu vivienda y evaluamos los riesgos.</p></div>
-   <div class="step"><div class="circle">03</div><b>DIAGNÓSTICO</b><p>Te entregamos un informe con hallazgos y prioridades.</p></div>
-   <div class="step"><div class="circle">04</div><b>PROPUESTA</b><p>Diseñamos soluciones a medida y cotizamos.</p></div>
-   <div class="step"><div class="circle">05</div><b>ADAPTAMOS</b><p>Ejecutamos las obras y adecuaciones necesarias.</p></div>
-   <div class="step"><div class="circle">06</div><b>TECNOLOGÍA</b><p>Incorporamos tecnología y sistemas de seguridad como apoyo a la vivienda.</p></div>
-   <div class="step"><div class="circle">07</div><b>ACOMPAÑAMOS</b><p>Te acompañamos hoy y en el futuro.</p></div>
+<section id="tecnologia">
+ <div>
+  <h2>TECNOLOGÍA Y SEGURIDAD PARA TU TRANQUILIDAD</h2>
+  <div>
+   <div><img alt="Cámara de seguridad para el hogar" loading="lazy" src="imagenes/equipo-camara.jpg"><b>CÁMARAS CON VISIÓN NOCTURNA</b><p>Monitorea tu hogar desde tu celular.</p></div>
+   <div><img alt="Botón antipánico para el hogar" loading="lazy" src="imagenes/equipo-boton.jpg"><b>BOTÓN ANTIPÁNICO</b><p>Alerta inmediata a familiares.</p></div>
+   <div><img alt="Sensor de apertura para puertas y ventanas" loading="lazy" src="imagenes/equipo-apertura.jpg"><b>SENSORES DE APERTURA</b><p>Detectan puertas y ventanas.</p></div>
+   <div><img alt="Sensor de movimiento para el hogar" loading="lazy" src="imagenes/equipo-movimiento.jpg"><b>SENSORES DE MOVIMIENTO</b><p>Seguridad activa en tu hogar.</p></div>
+   <div><img alt="Detector de humo para el hogar" loading="lazy" src="imagenes/equipo-humo.jpg"><b>DETECTORES DE HUMO</b><p>Prevención de incendios y emergencias.</p></div>
+   <div><img alt="Videoportero para acceso seguro" loading="lazy" src="imagenes/equipo-videoportero.jpg"><b>VIDEO PORTERO</b><p>Comunícate y visualiza quién llega.</p></div>
+   <div><img alt="Sistema de iluminación automática" loading="lazy" src="imagenes/equipo-luz.jpg"><b>ILUMINACIÓN AUTOMÁTICA</b><p>Más visibilidad, más seguridad.</p></div>
   </div>
  </div>
 </section>
 
-<section class="section" id="nosotros">
- <div class="container about-cta">
-  <div class="about">
-   <img src="imagenes/equipo-casa.jpg" alt="Equipo Casa Segura 60+">
-   <div class="about-copy">
+<section id="proceso">
+ <div>
+  <h2>NUESTRO PROCESO</h2>
+  <div>
+   <div><div>01</div><b>CONTÁCTANOS</b><p>Escríbenos por WhatsApp y cuéntanos tu caso.</p></div>
+   <div><div>02</div><b>EVALUAMOS</b><p>Visitamos tu vivienda y evaluamos los riesgos.</p></div>
+   <div><div>03</div><b>DIAGNÓSTICO</b><p>Te entregamos un informe con hallazgos y prioridades.</p></div>
+   <div><div>04</div><b>PROPUESTA</b><p>Diseñamos soluciones a medida y cotizamos.</p></div>
+   <div><div>05</div><b>ADAPTAMOS</b><p>Ejecutamos las obras y adecuaciones necesarias.</p></div>
+   <div><div>06</div><b>TECNOLOGÍA</b><p>Incorporamos tecnología y sistemas de seguridad como apoyo a la vivienda.</p></div>
+   <div><div>07</div><b>ACOMPAÑAMOS</b><p>Te acompañamos hoy y en el futuro.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="nosotros">
+ <div>
+  <div>
+   <img alt="Equipo Casa Segura 60+" src="imagenes/equipo-casa.jpg">
+   <div>
     <h2>¿QUIÉNES SOMOS?</h2>
     <p>Somos un grupo de especialistas en arquitectura, construcción, accesibilidad y tecnología aplicada al hogar.</p>
     <p>Nuestro propósito es ayudar a las familias a mantener a sus seres queridos viviendo en su casa de forma segura, cómoda y autónoma.</p>
-    <div class="tags"><div class="tag">♧ APOYO AL CUIDADO</div><div class="tag">♧ ERGONOMÍA</div><div class="tag">♧ ACCESIBILIDAD</div></div>
+    <div><div>♧ APOYO AL CUIDADO</div><div>♧ ERGONOMÍA</div><div>♧ ACCESIBILIDAD</div></div>
    </div>
   </div>
-  <div class="cta">
+  <div>
    <h2>¿QUIERES SABER SI TU CASA ES REALMENTE SEGURA?</h2>
    <p>Solicita tu evaluación sin compromiso.</p>
-   <!-- IMPORTANTE: reemplazar 569XXXXXXXX por el número real de WhatsApp antes de publicar -->
-   <a class="btn" href="https://wa.me/569XXXXXXXX" target="_blank">ESCRÍBENOS POR WHATSAPP</a>
-   <p style="margin-top:10px">Atendemos en toda la Región Metropolitana.</p>
+   
+   <a href="https://wa.me/56941928639" target="_blank">ESCRÍBENOS POR WHATSAPP</a>
+   <p>Atendemos en toda la Región Metropolitana.</p>
   </div>
  </div>
 </section>
 
-<section class="contact" id="contacto">
- <div class="container contact-grid">
+<section id="contacto">
+ <div>
   <div>
    <h2>Hablemos de tu vivienda.</h2>
    <p>Cuéntanos qué espacio quieres adaptar y nos pondremos en contacto contigo.</p>
-   <p style="margin-top:18px"><strong>Correo:</strong><br><a href="mailto:contacto@casasegura60.cl">contacto@casasegura60.cl</a></p>
+   <p><strong>Correo:</strong><br><a href="mailto:contacto@casasegura60.cl">contacto@casasegura60.cl</a></p>
   </div>
-  <form action="mailto:contacto@casasegura60.cl" method="post" enctype="text/plain">
-   <div class="form-grid">
-    <div><label for="nombre">Nombre y apellido</label><input id="nombre" name="Nombre" type="text" autocomplete="name" required></div>
-    <div><label for="telefono">Teléfono / WhatsApp</label><input id="telefono" name="Telefono" type="tel" autocomplete="tel" required></div>
-    <div><label for="correo">Correo electrónico</label><input id="correo" name="Correo" type="email" autocomplete="email" required></div>
-    <div><label for="comuna">Comuna</label><input id="comuna" name="Comuna" type="text" autocomplete="address-level2"></div>
-    <div class="field full"><label for="vivienda">Tipo de vivienda</label><select id="vivienda" name="Vivienda"><option>Casa</option><option>Departamento</option><option>Otro</option></select></div>
-    <div class="field full"><label for="necesidad">¿Qué necesitas adaptar?</label><textarea id="necesidad" name="Necesidad" placeholder="Cuéntanos brevemente qué necesitas mejorar..."></textarea></div>
-   </div>
-   <button class="btn submit" type="submit">SOLICITAR EVALUACIÓN</button>
-  </form>
+  <div>
+   <form action="#" method="POST">
+    <div>
+     <label for="nombre">Nombre</label><br>
+     <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+    </div>
+    <br>
+    <div>
+     <label for="email">Correo electrónico</label><br>
+     <input type="email" id="email" name="email" required placeholder="tu@email.com">
+    </div>
+    <br>
+    <div>
+     <label for="mensaje">Mensaje</label><br>
+     <textarea id="mensaje" name="mensaje" rows="4" required placeholder="¿Qué espacio te gustaría adaptar?"></textarea>
+    </div>
+    <br>
+    <button type="submit">Enviar mensaje</button>
+   </form>
+  </div>
  </div>
 </section>
 </main>
 
 <footer>
- <div class="container footer">
-  <div><div class="footer-logo">CASA SEGURA <span>60+</span></div><p>Viviendas adaptadas,<br>vidas más seguras.</p></div>
+ <div>
+  <div><div>CASA SEGURA <span>60+</span></div><p>Viviendas adaptadas,<br>vidas más seguras.</p></div>
   <div><h3>NAVEGACIÓN</h3><a href="#inicio">Inicio</a><a href="#hacemos">¿Qué hacemos?</a><a href="#adaptaciones">Adaptaciones</a><a href="#tecnologia">Tecnología</a></div>
   <div><h3>SERVICIOS</h3><a href="#contacto">Evaluación de viviendas</a><a href="#hacemos">Adaptación de baños</a><a href="#adaptaciones">Accesibilidad</a><a href="#tecnologia">Seguridad</a></div>
   <div><h3>CONTÁCTANOS</h3><a href="mailto:contacto@casasegura60.cl">contacto@casasegura60.cl</a><p>Región Metropolitana, Chile</p></div>
  </div>
- <div class="container copyright">© 2026 Casa Segura 60+. Todos los derechos reservados.</div>
+ <div>© 2026 Casa Segura 60+. Todos los derechos reservados.</div>
 </footer>
 
-<a class="float" href="https://wa.me/56941928639" target="_blank" aria-label="WhatsApp">◉</a>
+<a aria-label="WhatsApp" href="https://wa.me/56941928639" target="_blank">◉</a>
+
 </body>
 </html>
