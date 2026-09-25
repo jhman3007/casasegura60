@@ -2,1796 +2,2476 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Casa Segura 60+ | Adaptación de viviendas para adultos mayores</title>
-
-    <meta name="description"
-          content="Casa Segura 60+ adapta viviendas para adultos mayores, mejorando seguridad, comodidad, autonomía e independencia dentro del hogar.">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #263238;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1180px;
-            margin: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================== */
-
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e5e5;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .header-content {
-            min-height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        /* LOGO */
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #263238;
-            font-weight: bold;
-        }
-
-        .logo-icon {
-            position: relative;
-            width: 52px;
-            height: 46px;
-            flex-shrink: 0;
-        }
-
-        /* Casa */
-
-        .house-roof {
-            position: absolute;
-            width: 34px;
-            height: 34px;
-            border-left: 5px solid #355f52;
-            border-top: 5px solid #355f52;
-            transform: rotate(45deg);
-            left: 9px;
-            top: 2px;
-        }
-
-        .house-body {
-            position: absolute;
-            width: 35px;
-            height: 28px;
-            border: 5px solid #355f52;
-            border-top: none;
-            left: 9px;
-            top: 18px;
-            border-radius: 0 0 4px 4px;
-        }
-
-        /* Corazón */
-
-        .heart {
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #d63b3b;
-            transform: rotate(-45deg);
-            left: 18px;
-            top: 19px;
-            z-index: 3;
-        }
-
-        .heart:before,
-        .heart:after {
-            content: "";
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #d63b3b;
-            border-radius: 50%;
-        }
-
-        .heart:before {
-            top: -9px;
-            left: 0;
-        }
-
-        .heart:after {
-            top: 0;
-            left: 9px;
-        }
-
-        .logo-text {
-            font-size: 1.25rem;
-            line-height: 1.15;
-        }
-
-        .logo-text span {
-            display: block;
-            color: #355f52;
-            font-size: 0.82rem;
-            font-weight: normal;
-            margin-top: 3px;
-        }
-
-        /* NAV */
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-        }
-
-        nav a {
-            color: #344;
-            font-size: 0.92rem;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #355f52;
-        }
-
-        .nav-whatsapp {
-            background: #25D366;
-            color: white !important;
-            padding: 10px 16px;
-            border-radius: 25px;
-        }
-
-        .nav-whatsapp:hover {
-            background: #1faa52;
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            background: #f4f7f5;
-            padding: 65px 0;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 55px;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.1rem, 4vw, 3.6rem);
-            line-height: 1.1;
-            color: #29483f;
-            margin-bottom: 22px;
-        }
-
-        .hero-text h1 span {
-            color: #d63b3b;
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            color: #4c5b58;
-            margin-bottom: 28px;
-            max-width: 600px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 28px;
-            font-weight: bold;
-            transition: 0.2s ease;
-        }
-
-        .btn-primary {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #1faa52;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            border: 2px solid #355f52;
-            color: #355f52;
-            background: white;
-        }
-
-        .btn-secondary:hover {
-            background: #355f52;
-            color: white;
-        }
-
-        .hero-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-height: 470px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-
-        /* =========================
-           SECCIONES
-        ========================== */
-
-        section {
-            padding: 75px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            color: #29483f;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
-            max-width: 750px;
-            margin: auto;
-            color: #66736f;
-        }
-
-        /* =========================
-           EVALUAMOS
-        ========================== */
-
-        .evaluation-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .evaluation-card {
-            background: #f7f9f8;
-            border-radius: 15px;
-            padding: 28px 22px;
-            text-align: center;
-            border: 1px solid #e5ebe8;
-        }
-
-        .evaluation-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .evaluation-card h3 {
-            color: #355f52;
-            margin-bottom: 10px;
-        }
-
-        .evaluation-card p {
-            font-size: 0.93rem;
-            color: #66736f;
-        }
-
-        /* =========================
-           SERVICIOS
-        ========================== */
-
-        .services {
-            background: #f5f7f6;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 17px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 210px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eeeeee;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .service-content {
-            padding: 22px;
-        }
-
-        .service-content h3 {
-            color: #355f52;
-            margin-bottom: 9px;
-        }
-
-        .service-content p {
-            color: #66736f;
-            font-size: 0.93rem;
-        }
-
-        /* =========================
-           TECNOLOGÍA
-        ========================== */
-
-        .technology-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: -20px auto 40px;
-            color: #66736f;
-        }
-
-        .technology-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .tech-card {
-            background: white;
-            border: 1px solid #e2e7e4;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-        }
-
-        /*
-           IMPORTANTE:
-           Esta estructura centra completamente
-           los dispositivos tecnológicos.
-        */
-
-        .tech-image {
-            width: 100%;
-            height: 220px;
-            background: #f4f5f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .tech-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center center;
-            padding: 18px;
-            margin: 0 auto;
-        }
-
-        .tech-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .tech-content h3 {
-            color: #355f52;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        .tech-content p {
-            color: #66736f;
-            font-size: 0.9rem;
-        }
-
-        /* =========================
-           PROCESO
-        ========================== */
-
-        .process {
-            background: #f5f7f6;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .process-card {
-            text-align: center;
-            position: relative;
-        }
-
-        .process-number {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: #355f52;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
-
-        .process-card h3 {
-            color: #355f52;
-            margin-bottom: 8px;
-        }
-
-        .process-card p {
-            color: #66736f;
-            font-size: 0.92rem;
-        }
-
-        /* =========================
-           NOSOTROS
-        ========================== */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 18px;
-        }
-
-        .about-text h2 {
-            color: #29483f;
-            font-size: 2.2rem;
-            margin-bottom: 18px;
-        }
-
-        .about-text p {
-            color: #596762;
-            margin-bottom: 16px;
-        }
-
-        .about-list {
-            list-style: none;
-            margin-top: 22px;
-        }
-
-        .about-list li {
-            margin-bottom: 11px;
-            padding-left: 28px;
-            position: relative;
-            color: #4e5e59;
-        }
-
-        .about-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #355f52;
-            font-weight: bold;
-        }
-
-        /* =========================
-           CONTACTO
-        ========================== */
-
-        .contact {
-            background: #f5f7f6;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            gap: 45px;
-        }
-
-        .contact-info h2 {
-            color: #29483f;
-            font-size: 2.2rem;
-            margin-bottom: 16px;
-        }
-
-        .contact-info p {
-            color: #66736f;
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            margin-bottom: 18px;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: #355f52;
-            margin-bottom: 3px;
-        }
-
-        .contact-item a {
-            color: #4f5e59;
-        }
-
-        .contact-item a:hover {
-            color: #25a957;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
-        }
-
-        .form-group {
-            margin-bottom: 17px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: #43524e;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            border: 1px solid #d7dedb;
-            border-radius: 8px;
-            padding: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #355f52;
-        }
-
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .form-button {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        /* =========================
-           CTA
-        ========================== */
-
-        .cta {
-            background: #355f52;
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 720px;
-            margin: 0 auto 25px;
-            opacity: 0.94;
-        }
-
-        .cta .btn {
-            background: #25D366;
-            color: white;
-        }
-
-        .cta .btn:hover {
-            background: #1faa52;
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            background: #24332f;
-            color: #dfe6e3;
-            padding: 35px 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-brand {
-            font-weight: bold;
-        }
-
-        .footer-brand span {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: normal;
-            margin-top: 4px;
-            opacity: 0.75;
-        }
-
-        .footer-copy {
-            font-size: 0.85rem;
-            opacity: 0.75;
-            text-align: right;
-        }
-
-        /* =========================
-           WHATSAPP FLOTANTE
-        ========================== */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 29px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.22);
-            z-index: 2000;
-            transition: transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width: 1000px) {
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a:not(.nav-whatsapp) {
-                display: none;
-            }
-
-            .evaluation-grid,
-            .services-grid,
-            .technology-grid,
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-grid,
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .about-text {
-                order: 1;
-            }
-
-            .about-image {
-                order: 2;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .header-content {
-                min-height: 70px;
-            }
-
-            .logo-text {
-                font-size: 1rem;
-            }
-
-            .logo-text span {
-                font-size: 0.72rem;
-            }
-
-            .logo-icon {
-                transform: scale(0.85);
-                transform-origin: left center;
-                margin-right: -6px;
-            }
-
-            .nav-whatsapp {
-                padding: 8px 12px;
-                font-size: 0.85rem;
-            }
-
-            section {
-                padding: 55px 0;
-            }
-
-            .hero {
-                padding: 45px 0;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .section-title h2,
-            .about-text h2,
-            .contact-info h2,
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .evaluation-grid,
-            .services-grid,
-            .technology-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-image img {
-                max-height: 330px;
-            }
-
-            .service-image {
-                height: 230px;
-            }
-
-            .tech-image {
-                height: 240px;
-            }
-
-            .contact-form {
-                padding: 22px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-copy {
-                text-align: center;
-            }
-
-            .whatsapp-float {
-                right: 15px;
-                bottom: 15px;
-                width: 54px;
-                height: 54px;
-            }
-        }
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Casa Segura 60+ | Adaptación de viviendas para adultos mayores</title>
+
+<meta name="description"
+content="Adaptamos viviendas para adultos mayores, mejorando la seguridad, comodidad, accesibilidad e independencia dentro del hogar.">
+
+<meta name="theme-color" content="#06203b">
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+    --azul:#06203b;
+    --verde:#176f2c;
+    --verde-claro:#269b3b;
+    --rojo:#c9252c;
+    --gris-fondo:#f5f7f5;
+    --gris-linea:#dfe5e1;
+    --texto:#16283a;
+    --gris:#586575;
+    --blanco:#ffffff;
+    --sombra:0 8px 28px rgba(0,0,0,.07);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--texto);
+    background:#fff;
+    line-height:1.45;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.container{
+    width:min(1180px,94%);
+    margin:auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    height:78px;
+    background:#fff;
+    border-bottom:1px solid #ecefec;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+
+/* =========================================================
+   LOGO CASA + CORAZÓN
+========================================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    flex-shrink:0;
+}
+
+.logo-mark{
+    width:54px;
+    height:50px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* techo */
+
+.logo-roof{
+    position:absolute;
+    width:34px;
+    height:34px;
+    border-left:4px solid var(--azul);
+    border-top:4px solid var(--azul);
+    transform:rotate(45deg);
+    top:5px;
+    left:10px;
+    background:white;
+}
+
+
+/* cuerpo de la casa */
+
+.logo-house{
+    position:absolute;
+    width:42px;
+    height:31px;
+    border:4px solid var(--azul);
+    border-radius:2px 2px 6px 6px;
+    top:18px;
+    left:6px;
+    background:white;
+}
+
+
+/* corazón */
+
+.logo-heart{
+    position:absolute;
+    z-index:5;
+    color:var(--rojo);
+    font-size:23px;
+    line-height:1;
+    top:21px;
+    left:18px;
+}
+
+
+/* texto logo */
+
+.logo-text{
+    line-height:.9;
+    font-size:22px;
+    font-weight:900;
+}
+
+.logo-text strong{
+    display:block;
+    color:var(--azul);
+}
+
+.logo-text span{
+    display:block;
+    color:var(--verde);
+    font-size:18px;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:17px;
+    font-size:11px;
+    font-weight:900;
+}
+
+.menu a:not(.whatsapp):hover{
+    color:var(--verde);
+}
+
+.whatsapp{
+    background:var(--verde);
+    color:#fff;
+    border-radius:10px;
+    padding:10px 14px;
+    text-align:center;
+    line-height:1.15;
+    font-size:11px;
+    box-shadow:0 4px 12px rgba(23,111,44,.18);
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section{
+    padding:36px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:26px;
+    font-weight:900;
+    color:var(--azul);
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    border-radius:10px;
+    padding:13px 20px;
+    font-weight:900;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-green{
+    background:var(--verde);
+    color:white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:480px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #ffffff 34%,
+            rgba(255,255,255,.94) 45%,
+            rgba(255,255,255,.45) 63%,
+            rgba(255,255,255,0) 75%
+        ),
+        url("./imagenes/hero-pareja.jpg")
+        right center /
+        auto 100%
+        no-repeat;
+
+    background-color:#fff;
+}
+
+.hero-grid{
+    min-height:480px;
+    display:flex;
+    align-items:center;
+}
+
+.hero-copy{
+    width:55%;
+    padding:40px 0;
+}
+
+.eyebrow{
+    font-size:18px;
+    font-weight:900;
+    color:var(--azul);
+    margin-bottom:8px;
+}
+
+.hero h1{
+    font-size:43px;
+    line-height:1.03;
+    text-transform:uppercase;
+    color:var(--rojo);
+    max-width:620px;
+    margin-bottom:17px;
+}
+
+.hero p{
+    font-size:16px;
+    max-width:590px;
+    color:var(--azul);
+    font-weight:600;
+}
+
+.hero p strong{
+    color:var(--rojo);
+}
+
+.hero-actions{
+    margin:22px 0 13px;
+}
+
+.hero-actions small{
+    font-size:11px;
+    margin-left:6px;
+}
+
+.hero-note{
+    font-size:12px;
+    font-weight:700;
+    color:var(--azul);
+    max-width:450px;
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+========================================================= */
+
+.stats{
+    background:var(--azul);
+    color:white;
+    border-radius:15px;
+    padding:18px 25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    max-width:650px;
+    margin:-15px 0 30px auto;
+    position:relative;
+    z-index:2;
+    box-shadow:var(--sombra);
+}
+
+.stat{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.3);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat-icon{
+    font-size:25px;
+    height:31px;
+}
+
+.stat b{
+    display:block;
+    font-size:17px;
+}
+
+.stat span{
+    display:block;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   QUE EVALUAMOS
+========================================================= */
+
+.evaluate{
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+    border-bottom:1px solid var(--gris-linea);
+    padding-bottom:20px;
+}
+
+.eval{
+    text-align:center;
+    padding:0 8px;
+    border-right:1px solid var(--gris-linea);
+}
+
+.eval:last-child{
+    border-right:0;
+}
+
+.eval-icon{
+    height:43px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:29px;
+}
+
+.eval b{
+    display:block;
+    font-size:11px;
+    color:var(--verde);
+    margin:3px 0;
+}
+
+.eval p{
+    font-size:9px;
+    color:var(--texto);
+}
+
+
+/* =========================================================
+   SERVICIOS
+========================================================= */
+
+.doing{
+    background:var(--gris-fondo);
+    border-radius:16px;
+    padding:22px;
+}
+
+.cards4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5eae6;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.04);
+}
+
+.card-image{
+    width:100%;
+    height:160px;
+    overflow:hidden;
+    background:#eef1ee;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+.card-body{
+    padding:14px;
+}
+
+.card h3{
+    font-size:14px;
+    color:var(--azul);
+    text-transform:uppercase;
+}
+
+.card p{
+    font-size:11px;
+    margin-top:6px;
+    color:#394b5d;
+}
+
+.more{
+    display:inline-block;
+    color:var(--verde);
+    font-size:11px;
+    font-weight:900;
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   TECNOLOGÍA
+========================================================= */
+
+.tech{
+    padding-top:30px;
+}
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:16px;
+    align-items:start;
+}
+
+.tech-item{
+    min-width:0;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/*
+   CORRECCIÓN IMPORTANTE:
+   Todas las imágenes tecnológicas quedan
+   perfectamente centradas y sin deformarse.
+*/
+
+.tech-image{
+    width:100%;
+    height:145px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#fff;
+    border-radius:10px;
+}
+
+.tech-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center center;
+    padding:10px;
+    display:block;
+}
+
+.tech-item b{
+    display:block;
+    font-size:10px;
+    line-height:1.2;
+    color:var(--verde);
+    text-transform:uppercase;
+    margin-top:8px;
+    max-width:150px;
+}
+
+.tech-item p{
+    font-size:9px;
+    color:#44515e;
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   PROCESO
+========================================================= */
+
+.process{
+    padding-top:28px;
+}
+
+.process-line{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+    position:relative;
+}
+
+.process-line::before{
+    content:"";
+    position:absolute;
+    left:7%;
+    right:7%;
+    top:21px;
+    border-top:2px solid var(--verde);
+}
+
+.step{
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.circle{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:var(--verde);
+    color:white;
+    display:grid;
+    place-items:center;
+    margin:0 auto 7px;
+    font-weight:900;
+    border:4px solid white;
+    box-shadow:0 0 0 1px var(--verde);
+}
+
+.step b{
+    display:block;
+    font-size:10px;
+}
+
+.step p{
+    font-size:9px;
+    color:#4d5965;
+    max-width:120px;
+    margin:auto;
+}
+
+
+/* =========================================================
+   NOSOTROS
+========================================================= */
+
+.about-cta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.about{
+    background:#f4f5f4;
+    border-radius:15px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:44% 56%;
+}
+
+.about-image{
+    width:100%;
+    height:100%;
+    min-height:240px;
+    overflow:hidden;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+.about-copy{
+    padding:25px;
+}
+
+.about-copy h2{
+    font-size:25px;
+    color:var(--azul);
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.about-copy p{
+    font-size:12px;
+    margin-bottom:9px;
+}
+
+.tags{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+    margin-top:13px;
+}
+
+.tag{
+    font-size:9px;
+    font-weight:800;
+    color:var(--verde);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    background:var(--azul);
+    color:white;
+    border-radius:15px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.cta h2{
+    font-size:25px;
+    text-transform:uppercase;
+    line-height:1.08;
+    margin-bottom:10px;
+}
+
+.cta p{
+    font-size:13px;
+}
+
+.cta .btn{
+    background:var(--verde-claro);
+    color:white;
+    margin-top:17px;
+    width:max-content;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.contact{
+    padding:48px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:38px;
+    align-items:start;
+}
+
+.contact h2{
+    font-size:32px;
+    color:var(--azul);
+    margin-bottom:11px;
+}
+
+.contact p{
+    color:var(--gris);
+}
+
+.contact-info-box{
+    margin-top:20px;
+    padding:15px;
+    border-left:4px solid var(--verde);
+    background:var(--gris-fondo);
+    border-radius:7px;
+}
+
+.contact-info-box strong{
+    display:block;
+    color:var(--azul);
+    margin-bottom:4px;
+}
+
+.contact-info-box a{
+    color:var(--verde);
+    font-weight:800;
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+form{
+    border:1px solid var(--gris-linea);
+    border-radius:15px;
+    padding:23px;
+    box-shadow:var(--sombra);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    font-size:11px;
+    font-weight:900;
+    margin-bottom:5px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:11px;
+    border:1px solid #ccd3d7;
+    border-radius:8px;
+    outline:none;
+    background:white;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--verde);
+}
+
+textarea{
+    min-height:105px;
+    resize:vertical;
+}
+
+.submit{
+    margin-top:14px;
+    width:100%;
+    background:var(--verde);
+    color:white;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--azul);
+    color:white;
+    padding:30px 0;
+}
+
+.footer{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr 1fr;
+    gap:25px;
+}
+
+.footer h3{
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.footer p,
+.footer a{
+    font-size:10px;
+    color:#d9e1e8;
+    display:block;
+    margin:4px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.footer-logo{
+    font-size:22px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#57b45f;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:14px;
+    margin-top:20px;
+    font-size:9px;
+    color:#cbd5dd;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOTANTE
+========================================================= */
+
+.float-whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:57px;
+    height:57px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:900;
+    box-shadow:0 7px 20px rgba(0,0,0,.22);
+    z-index:2000;
+}
+
+.float-whatsapp:hover{
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px){
+
+    .menu{
+        gap:11px;
+    }
+
+    .tech-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑO
+========================================================= */
+
+@media(max-width:900px){
+
+    .menu a:not(.whatsapp){
+        display:none;
+    }
+
+    .hero{
+        background:
+            linear-gradient(
+                90deg,
+                #fff 0%,
+                #fff 48%,
+                rgba(255,255,255,.65) 68%,
+                rgba(255,255,255,0) 100%
+            ),
+            url("./imagenes/hero-pareja.jpg")
+            center/cover no-repeat;
+    }
+
+    .hero-copy{
+        width:67%;
+    }
+
+    .evaluate{
+        grid-template-columns:repeat(4,1fr);
+        row-gap:18px;
+    }
+
+    .eval:nth-child(4){
+        border-right:0;
+    }
+
+    .cards4{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-cta,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-line{
+        grid-template-columns:repeat(4,1fr);
+        row-gap:20px;
+    }
+
+    .process-line::before{
+        display:none;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media(max-width:600px){
+
+    header{
+        height:68px;
+    }
+
+    .logo-mark{
+        width:44px;
+        height:42px;
+        transform:scale(.85);
+        transform-origin:left center;
+    }
+
+    .logo-text{
+        font-size:17px;
+    }
+
+    .logo-text span{
+        font-size:15px;
+    }
+
+    .whatsapp{
+        padding:8px 10px;
+        font-size:10px;
+    }
+
+
+    /* HERO */
+
+    .hero,
+    .hero-grid{
+        min-height:620px;
+    }
+
+    .hero{
+        background:
+            linear-gradient(
+                180deg,
+                #fff 0%,
+                #fff 43%,
+                rgba(255,255,255,.76) 62%,
+                rgba(255,255,255,0) 100%
+            ),
+            url("./imagenes/hero-pareja.jpg")
+            center bottom/100% auto no-repeat;
+    }
+
+    .hero-copy{
+        width:100%;
+        padding:35px 0;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+
+    /* GENERAL */
+
+    .section{
+        padding:28px 0;
+    }
+
+    .section-title{
+        font-size:21px;
+    }
+
+
+    /* STATS */
+
+    .stats{
+        margin:20px 0 28px;
+        grid-template-columns:1fr 1fr 1fr;
+        padding:12px 8px;
+    }
+
+    .stat{
+        padding:0 4px;
+    }
+
+    .stat b{
+        font-size:13px;
+    }
+
+    .stat span{
+        font-size:8px;
+    }
+
+
+    /* EVALUACIÓN */
+
+    .evaluate{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .eval:nth-child(2n){
+        border-right:0;
+    }
+
+
+    /* SERVICIOS */
+
+    .cards4{
+        grid-template-columns:1fr;
+    }
+
+    .card-image{
+        height:185px;
+    }
+
+
+    /* TECNOLOGÍA */
+
+    .tech-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:22px 12px;
+    }
+
+    .tech-image{
+        height:140px;
+    }
+
+
+    /* PROCESO */
+
+    .process-line{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    /* NOSOTROS */
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:220px;
+        min-height:0;
+    }
+
+    .tags{
+        grid-template-columns:1fr;
+    }
+
+
+    /* FORMULARIO */
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+
+    /* FOOTER */
+
+    .footer{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR MUY PEQUEÑO
+========================================================= */
+
+@media(max-width:380px){
+
+    .footer{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.25);
+        padding:8px;
+    }
+
+    .stat:last-child{
+        border-bottom:0;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<!-- =====================================================
+
+<!-- =========================================================
      HEADER
-====================================================== -->
+========================================================= -->
 
 <header>
-    <div class="container header-content">
 
-        <a href="#inicio" class="logo">
+<div class="container nav">
 
-            <div class="logo-icon">
-                <div class="house-roof"></div>
-                <div class="house-body"></div>
-                <div class="heart"></div>
-            </div>
 
-            <div class="logo-text">
-                Casa Segura 60+
-                <span>Hogares pensados para vivir mejor</span>
-            </div>
+<a class="logo" href="#inicio" aria-label="Casa Segura 60+">
 
-        </a>
+<div class="logo-mark">
 
-        <nav>
-            <a href="#servicios">Servicios</a>
-            <a href="#tecnologia">Tecnología</a>
-            <a href="#proceso">Cómo trabajamos</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>
+<div class="logo-roof"></div>
 
-            <a
-                class="nav-whatsapp"
-                href="https://wa.me/56941928639?text=Hola%20Casa%20Segura%2060%2B%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20adaptaci%C3%B3n%20de%20una%20vivienda."
-                target="_blank"
-                rel="noopener">
-                WhatsApp
-            </a>
-        </nav>
+<div class="logo-house"></div>
 
-    </div>
-</header>
+<div class="logo-heart">♥</div>
 
+</div>
 
-<!-- =====================================================
-     HERO
-====================================================== -->
 
-<section class="hero" id="inicio">
+<div class="logo-text">
 
-    <div class="container hero-grid">
+<strong>CASA<br>SEGURA</strong>
 
-        <div class="hero-text">
+<span>60+</span>
 
-            <h1>
-                Una casa segura,
-                <span>una vida más independiente.</span>
-            </h1>
-
-            <p>
-                Adaptamos viviendas para adultos mayores,
-                considerando sus necesidades actuales y futuras,
-                para mejorar la seguridad, comodidad,
-                autonomía y calidad de vida dentro del hogar.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    class="btn btn-primary"
-                    href="https://wa.me/56941928639?text=Hola%20Casa%20Segura%2060%2B%2C%20quiero%20consultar%20por%20la%20adaptaci%C3%B3n%20de%20una%20vivienda."
-                    target="_blank"
-                    rel="noopener">
-                    Consultar por WhatsApp
-                </a>
-
-                <a class="btn btn-secondary" href="#servicios">
-                    Conocer el servicio
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-image">
-
-            <img
-                src="./imagenes/hero-pareja.jpg"
-                alt="Pareja de adultos mayores en su hogar"
-                onerror="this.style.display='none';">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     QUE EVALUAMOS
-====================================================== -->
-
-<section id="evaluamos">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>¿Qué evaluamos?</h2>
-
-            <p>
-                Analizamos la vivienda y las necesidades de la persona
-                para identificar oportunidades de mejora que permitan
-                vivir con mayor seguridad y autonomía.
-            </p>
-
-        </div>
-
-        <div class="evaluation-grid">
-
-            <div class="evaluation-card">
-
-                <div class="evaluation-icon">🏠</div>
-
-                <h3>Entorno</h3>
-
-                <p>
-                    Revisamos los espacios de circulación,
-                    accesos y distribución de la vivienda.
-                </p>
-
-            </div>
-
-
-            <div class="evaluation-card">
-
-                <div class="evaluation-icon">🚿</div>
-
-                <h3>Baño y cocina</h3>
-
-                <p>
-                    Identificamos oportunidades para mejorar
-                    comodidad, accesibilidad y seguridad.
-                </p>
-
-            </div>
-
-
-            <div class="evaluation-card">
-
-                <div class="evaluation-icon">🪜</div>
-
-                <h3>Desniveles</h3>
-
-                <p>
-                    Analizamos escaleras, cambios de nivel
-                    y zonas que puedan dificultar la movilidad.
-                </p>
-
-            </div>
-
-
-            <div class="evaluation-card">
-
-                <div class="evaluation-icon">❤️</div>
-
-                <h3>Necesidades personales</h3>
-
-                <p>
-                    Consideramos las características y rutinas
-                    de cada persona y familia.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICIOS
-====================================================== -->
-
-<section class="services" id="servicios">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>Adaptamos tu hogar a tus necesidades</h2>
-
-            <p>
-                No todas las viviendas ni todas las personas necesitan
-                las mismas soluciones. Diseñamos intervenciones
-                de acuerdo con cada situación.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-            <article class="service-card">
-
-                <div class="service-image">
-
-                    <img
-                        src="./imagenes/bano-seguro.jpg"
-                        alt="Baño adaptado para adulto mayor"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>Baños más seguros</h3>
-
-                    <p>
-                        Soluciones para mejorar el acceso,
-                        movilidad, apoyo y comodidad en el baño.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-
-                    <img
-                        src="./imagenes/accesibilidad.jpg"
-                        alt="Accesibilidad en vivienda"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>Accesibilidad</h3>
-
-                    <p>
-                        Mejoramos circulaciones, accesos,
-                        desniveles y condiciones de uso.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-
-                    <img
-                        src="./imagenes/escaleras.jpg"
-                        alt="Escalera de vivienda"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>Circulaciones</h3>
-
-                    <p>
-                        Analizamos escaleras, pasillos,
-                        accesos y espacios de tránsito.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-
-                    <img
-                        src="./imagenes/dormitorio.jpg"
-                        alt="Dormitorio adaptado"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="service-content">
-
-                    <h3>Dormitorio y descanso</h3>
-
-                    <p>
-                        Adaptamos el entorno para facilitar
-                        el descanso, movilidad y autonomía.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TECNOLOGIA
-====================================================== -->
-
-<section id="tecnologia">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>Tecnología para una mayor tranquilidad</h2>
-
-            <p>
-                La tecnología puede complementar las adaptaciones
-                físicas de la vivienda y ayudar a la familia a
-                mantenerse informada.
-            </p>
-
-        </div>
-
-
-        <p class="technology-intro">
-            Las soluciones se seleccionan de acuerdo con las necesidades
-            de cada vivienda y persona.
-        </p>
-
-
-        <div class="technology-grid">
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-camara.jpg"
-                        alt="Cámara de supervisión"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Supervisión por video</h3>
-
-                    <p>
-                        Permite verificar determinados espacios
-                        del hogar cuando sea necesario.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-boton.jpg"
-                        alt="Botón de emergencia"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Botón de emergencia</h3>
-
-                    <p>
-                        Una forma sencilla de solicitar ayuda
-                        cuando la persona lo necesita.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-apertura.jpg"
-                        alt="Sensor de apertura de puerta"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Control de accesos</h3>
-
-                    <p>
-                        Sensores que permiten conocer
-                        determinados eventos de apertura.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-movimiento.jpg"
-                        alt="Sensor de movimiento"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Detección de movimiento</h3>
-
-                    <p>
-                        Permite supervisar actividad en
-                        determinados sectores de la vivienda.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-humo.jpg"
-                        alt="Detector de humo"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Detección de humo</h3>
-
-                    <p>
-                        Tecnología orientada a detectar
-                        situaciones de emergencia.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-videoportero.jpg"
-                        alt="Videoportero"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Videoportero</h3>
-
-                    <p>
-                        Permite identificar a las personas
-                        antes de permitir el acceso.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="tech-card">
-
-                <div class="tech-image">
-
-                    <img
-                        src="./imagenes/equipo-luz.jpg"
-                        alt="Iluminación inteligente"
-                        onerror="this.style.display='none';">
-
-                </div>
-
-                <div class="tech-content">
-
-                    <h3>Iluminación</h3>
-
-                    <p>
-                        Soluciones de iluminación que facilitan
-                        el desplazamiento dentro del hogar.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROCESO
-====================================================== -->
-
-<section class="process" id="proceso">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>¿Cómo trabajamos?</h2>
-
-            <p>
-                Un proceso sencillo para identificar necesidades
-                y proponer soluciones adecuadas.
-            </p>
-
-        </div>
-
-
-        <div class="process-grid">
-
-
-            <div class="process-card">
-
-                <div class="process-number">1</div>
-
-                <h3>Conocemos la situación</h3>
-
-                <p>
-                    Conversamos con la persona y/o su familia
-                    para comprender sus necesidades.
-                </p>
-
-            </div>
-
-
-            <div class="process-card">
-
-                <div class="process-number">2</div>
-
-                <h3>Analizamos la vivienda</h3>
-
-                <p>
-                    Revisamos espacios, accesos, circulación,
-                    equipamiento y necesidades particulares.
-                </p>
-
-            </div>
-
-
-            <div class="process-card">
-
-                <div class="process-number">3</div>
-
-                <h3>Proponemos soluciones</h3>
-
-                <p>
-                    Definimos alternativas de adaptación
-                    física y tecnológica.
-                </p>
-
-            </div>
-
-
-            <div class="process-card">
-
-                <div class="process-number">4</div>
-
-                <h3>Implementamos</h3>
-
-                <p>
-                    Coordinamos las soluciones seleccionadas
-                    y su implementación.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NOSOTROS
-====================================================== -->
-
-<section id="nosotros">
-
-    <div class="container about-grid">
-
-        <div class="about-image">
-
-            <img
-                src="./imagenes/equipo-casa.jpg"
-                alt="Profesionales revisando una vivienda"
-                onerror="this.style.display='none';">
-
-        </div>
-
-
-        <div class="about-text">
-
-            <h2>Un hogar pensado para las personas</h2>
-
-            <p>
-                En Casa Segura 60+ entendemos que una vivienda
-                debe adaptarse a las personas y no al contrario.
-            </p>
-
-            <p>
-                A medida que pasa el tiempo, las necesidades
-                pueden cambiar. Una vivienda que antes era
-                completamente cómoda puede requerir pequeñas
-                o grandes adaptaciones.
-            </p>
-
-            <p>
-                Nuestro trabajo consiste en identificar esas
-                necesidades y buscar soluciones prácticas,
-                combinando arquitectura, accesibilidad,
-                ergonomía y tecnología.
-            </p>
-
-            <p>
-                Contamos con un <strong>grupo de especialistas</strong>
-                que permite abordar las necesidades de cada
-                proyecto de manera integral.
-            </p>
-
-
-            <ul class="about-list">
-
-                <li>Soluciones adaptadas a cada vivienda.</li>
-
-                <li>Enfoque en autonomía e independencia.</li>
-
-                <li>Integración de soluciones físicas y tecnológicas.</li>
-
-                <li>Consideración de las necesidades de la familia.</li>
-
-                <li>Implementación gradual según prioridades.</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CTA
-====================================================== -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <h2>Tu hogar puede acompañarte mejor</h2>
-
-        <p>
-            Conversemos sobre las necesidades de tu vivienda
-            y las posibilidades de adaptación.
-        </p>
-
-        <a
-            class="btn"
-            href="https://wa.me/56941928639?text=Hola%20Casa%20Segura%2060%2B%2C%20quiero%20conversar%20sobre%20la%20adaptaci%C3%B3n%20de%20mi%20vivienda."
-            target="_blank"
-            rel="noopener">
-            Hablar por WhatsApp
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACTO
-====================================================== -->
-
-<section class="contact" id="contacto">
-
-    <div class="container contact-grid">
-
-        <div class="contact-info">
-
-            <h2>Contáctanos</h2>
-
-            <p>
-                Cuéntanos brevemente qué necesitas y
-                nos pondremos en contacto contigo.
-            </p>
-
-
-            <div class="contact-item">
-
-                <strong>WhatsApp</strong>
-
-                <a
-                    href="https://wa.me/56941928639"
-                    target="_blank"
-                    rel="noopener">
-                    +56 9 4192 8639
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <strong>Email</strong>
-
-                <a href="mailto:contacto@casasegura60.cl">
-                    contacto@casasegura60.cl
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <strong>Servicio</strong>
-
-                <span>
-                    Adaptación de viviendas para adultos mayores
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <form
-            class="contact-form"
-            id="contactForm">
-
-            <div class="form-group">
-
-                <label for="nombre">
-                    Nombre
-                </label>
-
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Tu nombre"
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="email">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="tu@email.com"
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="telefono">
-                    Teléfono / WhatsApp
-                </label>
-
-                <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    placeholder="+56 9..."
-                    required>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="mensaje">
-                    ¿En qué podemos ayudarte?
-                </label>
-
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Cuéntanos brevemente sobre la vivienda y lo que necesitas."
-                    required></textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary form-button">
-                Enviar consulta
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-====================================================== -->
-
-<footer>
-
-    <div class="container footer-content">
-
-        <div class="footer-brand">
-
-            Casa Segura 60+
-
-            <span>
-                Adaptación de viviendas para adultos mayores
-            </span>
-
-        </div>
-
-
-        <div class="footer-copy">
-
-            © 2026 Casa Segura 60+ · Todos los derechos reservados.
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =====================================================
-     WHATSAPP FLOTANTE
-====================================================== -->
-
-<a
-    class="whatsapp-float"
-    href="https://wa.me/56941928639?text=Hola%20Casa%20Segura%2060%2B%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n."
-    target="_blank"
-    rel="noopener"
-    aria-label="Contactar por WhatsApp">
-
-    ☎
+</div>
 
 </a>
 
 
+<nav class="menu">
+
+<a href="#inicio">INICIO</a>
+
+<a href="#hacemos">¿QUÉ HACEMOS?</a>
+
+<a href="#adaptaciones">ADAPTACIONES</a>
+
+<a href="#tecnologia">TECNOLOGÍA</a>
+
+<a href="#proceso">PROCESO</a>
+
+<a href="#nosotros">NOSOTROS</a>
+
+<a href="#contacto">CONTACTO</a>
+
+
 <!-- =====================================================
-     JAVASCRIPT FORMULARIO
-====================================================== -->
+     CAMBIA 569XXXXXXXX POR TU NÚMERO REAL
+===================================================== -->
+
+<a
+class="whatsapp"
+href="https://wa.me/569XXXXXXXX"
+target="_blank"
+rel="noopener">
+
+WHATSAPP<br>
+Solicita información
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main id="inicio">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-copy">
+
+
+<div class="eyebrow">
+
+A MEDIDA QUE PASA EL TIEMPO,
+
+</div>
+
+
+<h1>
+
+TU CASA PUEDE SER<br>
+TU MAYOR RIESGO.
+
+</h1>
+
+
+<p>
+
+Evaluamos, diseñamos y adaptamos viviendas para prevenir
+
+<strong>accidentes</strong>
+
+y mejorar la calidad de vida de nuestros seres queridos,
+
+dándoles mayor independencia, seguridad y tranquilidad.
+
+</p>
+
+
+<div class="hero-actions">
+
+<a
+class="btn btn-green"
+href="https://wa.me/569XXXXXXXX"
+target="_blank"
+rel="noopener">
+
+SOLICITA INFORMACIÓN
+
+<small>por WhatsApp</small>
+
+</a>
+
+</div>
+
+
+<div class="hero-note">
+
+♥ Ayudamos a las familias a identificar riesgos y mejorar
+la seguridad, accesibilidad y autonomía dentro del hogar.
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ADAPTACIONES
+========================================================= -->
+
+<section class="section" id="adaptaciones">
+
+<div class="container">
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<div class="stat-icon">🛡</div>
+
+<b>PREVENIR</b>
+
+<span>
+Ayuda a reducir riesgos dentro del hogar.
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">✓</div>
+
+<b>ADAPTAR</b>
+
+<span>
+Facilita el uso seguro de los espacios.
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">♥</div>
+
+<b>AUTONOMÍA</b>
+
+<span>
+Un hogar pensado para vivir mejor.
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+
+¿QUÉ EVALUAMOS?
+
+</h2>
+
+
+<div class="evaluate">
+
+
+<div class="eval">
+
+<div class="eval-icon">🚿</div>
+
+<b>BAÑOS</b>
+
+<p>
+Duchas, barras de apoyo, pisos antideslizantes y accesibilidad.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">▥</div>
+
+<b>ESCALERAS</b>
+
+<p>
+Pasamanos, iluminación y seguridad en subida y bajada.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">▥</div>
+
+<b>DESNIVELES</b>
+
+<p>
+Umbrales, cambios de nivel y accesos sin obstáculos.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">💡</div>
+
+<b>ILUMINACIÓN</b>
+
+<p>
+Mejoramos la visibilidad y reducimos riesgos.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">🚪</div>
+
+<b>ACCESOS</b>
+
+<p>
+Puertas, pasillos y circulaciones cómodas y seguras.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">🛏</div>
+
+<b>DORMITORIOS</b>
+
+<p>
+Altura de cama, circulación y espacios seguros.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">▣</div>
+
+<b>COCINA</b>
+
+<p>
+Distribución, alcance seguro y facilidad de uso.
+</p>
+
+</div>
+
+
+<div class="eval">
+
+<div class="eval-icon">🛡</div>
+
+<b>SEGURIDAD</b>
+
+<p>
+Sistemas de alerta, tecnología y prevención.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICIOS
+========================================================= -->
+
+<section class="section" id="hacemos">
+
+<div class="container doing">
+
+
+<h2 class="section-title">
+
+¿QUÉ HACEMOS?
+
+</h2>
+
+
+<div class="cards4">
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="./imagenes/bano-seguro.jpg"
+alt="Baño adaptado para mayor seguridad"
+loading="lazy">
+
+</div>
+
+
+<div class="card-body">
+
+<h3>BAÑO SEGURO</h3>
+
+<p>
+Adaptamos tu baño para facilitar la higiene diaria y mejorar la seguridad.
+</p>
+
+<a class="more" href="#contacto">
+Quiero saber más →
+</a>
+
+</div>
+
+</article>
+
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="./imagenes/accesibilidad.jpg"
+alt="Accesibilidad y movilidad segura en la vivienda"
+loading="lazy">
+
+</div>
+
+
+<div class="card-body">
+
+<h3>ACCESIBILIDAD</h3>
+
+<p>
+Reducimos barreras arquitectónicas para facilitar una movilidad segura.
+</p>
+
+<a class="more" href="#contacto">
+Quiero saber más →
+</a>
+
+</div>
+
+</article>
+
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="./imagenes/escaleras.jpg"
+alt="Escaleras adaptadas para prevenir accidentes"
+loading="lazy">
+
+</div>
+
+
+<div class="card-body">
+
+<h3>PREVENCIÓN DE ACCIDENTES</h3>
+
+<p>
+Pasamanos, iluminación, pisos antideslizantes y otras soluciones.
+</p>
+
+<a class="more" href="#contacto">
+Quiero saber más →
+</a>
+
+</div>
+
+</article>
+
+
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="./imagenes/dormitorio.jpg"
+alt="Dormitorio adaptado para una persona mayor"
+loading="lazy">
+
+</div>
+
+
+<div class="card-body">
+
+<h3>ADAPTACIÓN INTEGRAL</h3>
+
+<p>
+Adaptamos la vivienda a las necesidades presentes y futuras.
+</p>
+
+<a class="more" href="#contacto">
+Quiero saber más →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TECNOLOGÍA
+========================================================= -->
+
+<section class="section tech" id="tecnologia">
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+TECNOLOGÍA Y SEGURIDAD PARA TU TRANQUILIDAD
+
+</h2>
+
+
+<div class="tech-grid">
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-camara.jpg"
+alt="Cámara de seguridad para el hogar"
+loading="lazy">
+
+</div>
+
+<b>
+CÁMARAS CON VISIÓN NOCTURNA
+</b>
+
+<p>
+Monitorea tu hogar desde tu celular.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-boton.jpg"
+alt="Botón antipánico para el hogar"
+loading="lazy">
+
+</div>
+
+<b>
+BOTÓN ANTIPÁNICO
+</b>
+
+<p>
+Alerta a familiares ante una emergencia.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-apertura.jpg"
+alt="Sensor de apertura para puertas y ventanas"
+loading="lazy">
+
+</div>
+
+<b>
+SENSORES DE APERTURA
+</b>
+
+<p>
+Detectan aperturas de puertas y ventanas.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-movimiento.jpg"
+alt="Sensor de movimiento para el hogar"
+loading="lazy">
+
+</div>
+
+<b>
+SENSORES DE MOVIMIENTO
+</b>
+
+<p>
+Apoyo a la seguridad activa del hogar.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-humo.jpg"
+alt="Detector de humo para el hogar"
+loading="lazy">
+
+</div>
+
+<b>
+DETECTORES DE HUMO
+</b>
+
+<p>
+Apoyo a la prevención de emergencias.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-videoportero.jpg"
+alt="Videoportero para acceso seguro"
+loading="lazy">
+
+</div>
+
+<b>
+VIDEO PORTERO
+</b>
+
+<p>
+Visualiza y comunica quién llega.
+</p>
+
+</div>
+
+
+
+<div class="tech-item">
+
+<div class="tech-image">
+
+<img
+src="./imagenes/equipo-luz.jpg"
+alt="Sistema de iluminación automática"
+loading="lazy">
+
+</div>
+
+<b>
+ILUMINACIÓN AUTOMÁTICA
+</b>
+
+<p>
+Más visibilidad y comodidad.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESO
+========================================================= -->
+
+<section class="section process" id="proceso">
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+NUESTRO PROCESO
+
+</h2>
+
+
+<div class="process-line">
+
+
+<div class="step">
+
+<div class="circle">01</div>
+
+<b>CONTÁCTANOS</b>
+
+<p>
+Cuéntanos qué necesitas mejorar.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">02</div>
+
+<b>EVALUAMOS</b>
+
+<p>
+Revisamos la vivienda y sus principales riesgos.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">03</div>
+
+<b>DIAGNÓSTICO</b>
+
+<p>
+Identificamos prioridades y oportunidades de mejora.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">04</div>
+
+<b>PROPUESTA</b>
+
+<p>
+Diseñamos soluciones según las necesidades.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">05</div>
+
+<b>ADAPTAMOS</b>
+
+<p>
+Ejecutamos las adecuaciones acordadas.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">06</div>
+
+<b>TECNOLOGÍA</b>
+
+<p>
+Incorporamos soluciones tecnológicas cuando corresponde.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="circle">07</div>
+
+<b>ACOMPAÑAMOS</b>
+
+<p>
+Te acompañamos durante el proceso.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NOSOTROS
+========================================================= -->
+
+<section class="section" id="nosotros">
+
+<div class="container about-cta">
+
+
+<div class="about">
+
+
+<div class="about-image">
+
+<img
+src="./imagenes/equipo-casa.jpg"
+alt="Grupo de especialistas Casa Segura 60+"
+loading="lazy">
+
+</div>
+
+
+<div class="about-copy">
+
+
+<h2>
+¿QUIÉNES SOMOS?
+</h2>
+
+
+<p>
+
+Somos un grupo de especialistas en arquitectura,
+construcción, accesibilidad y tecnología aplicada al hogar.
+
+</p>
+
+
+<p>
+
+Nuestro propósito es ayudar a las familias a mantener
+a sus seres queridos viviendo en su casa de forma segura,
+cómoda y autónoma.
+
+</p>
+
+
+<div class="tags">
+
+<div class="tag">
+♥ APOYO AL CUIDADO
+</div>
+
+<div class="tag">
+♥ ERGONOMÍA
+</div>
+
+<div class="tag">
+♥ ACCESIBILIDAD
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="cta">
+
+
+<h2>
+
+¿QUIERES SABER SI TU CASA ES REALMENTE SEGURA?
+
+</h2>
+
+
+<p>
+
+Cuéntanos qué necesitas y conversemos sobre las alternativas
+para tu vivienda.
+
+</p>
+
+
+<a class="btn" href="#contacto">
+
+QUIERO CONTACTARLOS
+
+</a>
+
+
+<p style="margin-top:11px">
+
+Atendemos en la Región Metropolitana.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACTO
+========================================================= -->
+
+<section class="contact" id="contacto">
+
+<div class="container contact-grid">
+
+
+<div>
+
+
+<h2>
+Hablemos de tu vivienda.
+</h2>
+
+
+<p>
+
+Cuéntanos qué espacio quieres adaptar o qué situación
+quieres mejorar y nos pondremos en contacto contigo.
+
+</p>
+
+
+<div class="contact-info-box">
+
+<strong>
+Correo electrónico
+</strong>
+
+<a href="mailto:contacto@casasegura60.cl">
+
+contacto@casasegura60.cl
+
+</a>
+
+</div>
+
+
+<div class="contact-info-box">
+
+<strong>
+WhatsApp
+</strong>
+
+<a
+href="https://wa.me/569XXXXXXXX"
+target="_blank"
+rel="noopener">
+
+Escríbenos por WhatsApp
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FORMULARIO
+===================================================== -->
+
+<form id="contactForm">
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="nombre">
+Nombre y apellido
+</label>
+
+<input
+id="nombre"
+name="nombre"
+type="text"
+autocomplete="name"
+required>
+
+</div>
+
+
+
+<div>
+
+<label for="telefono">
+Teléfono / WhatsApp
+</label>
+
+<input
+id="telefono"
+name="telefono"
+type="tel"
+autocomplete="tel"
+required>
+
+</div>
+
+
+
+<div>
+
+<label for="correo">
+Correo electrónico
+</label>
+
+<input
+id="correo"
+name="correo"
+type="email"
+autocomplete="email"
+required>
+
+</div>
+
+
+
+<div>
+
+<label for="comuna">
+Comuna
+</label>
+
+<input
+id="comuna"
+name="comuna"
+type="text"
+autocomplete="address-level2">
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="vivienda">
+Tipo de vivienda
+</label>
+
+<select id="vivienda" name="vivienda">
+
+<option value="">
+Selecciona una opción
+</option>
+
+<option>
+Casa
+</option>
+
+<option>
+Departamento
+</option>
+
+<option>
+Otro
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="necesidad">
+¿Qué necesitas adaptar?
+</label>
+
+<textarea
+id="necesidad"
+name="necesidad"
+placeholder="Cuéntanos brevemente qué espacios o situaciones te preocupan...">
+</textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+class="btn submit"
+type="submit">
+
+ENVIAR SOLICITUD
+
+</button>
+
+
+</form>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container footer">
+
+
+<div>
+
+<div class="footer-logo">
+
+CASA SEGURA <span>60+</span>
+
+</div>
+
+<p>
+Viviendas adaptadas,<br>
+vidas más seguras.
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+NAVEGACIÓN
+</h3>
+
+<a href="#inicio">
+Inicio
+</a>
+
+<a href="#hacemos">
+¿Qué hacemos?
+</a>
+
+<a href="#adaptaciones">
+Adaptaciones
+</a>
+
+<a href="#tecnologia">
+Tecnología
+</a>
+
+<a href="#proceso">
+Proceso
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+SERVICIOS
+</h3>
+
+<a href="#contacto">
+Contacto
+</a>
+
+<a href="#hacemos">
+Adaptación de baños
+</a>
+
+<a href="#adaptaciones">
+Accesibilidad
+</a>
+
+<a href="#tecnologia">
+Seguridad
+</a>
+
+</div>
+
+
+
+<div>
+
+<h3>
+CONTÁCTANOS
+</h3>
+
+<a href="mailto:contacto@casasegura60.cl">
+
+contacto@casasegura60.cl
+
+</a>
+
+<p>
+Región Metropolitana, Chile
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="container copyright">
+
+© 2026 Casa Segura 60+. Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP FLOTANTE
+========================================================= -->
+
+<a
+class="float-whatsapp"
+href="https://wa.me/569XXXXXXXX"
+target="_blank"
+rel="noopener"
+aria-label="Contactar por WhatsApp">
+
+☏
+
+</a>
+
+
+
+<!-- =========================================================
+     FORMULARIO
+========================================================= -->
 
 <script>
 
-    document
-        .getElementById("contactForm")
-        .addEventListener("submit", function(event) {
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(event){
 
-            event.preventDefault();
-
-            const nombre =
-                document.getElementById("nombre").value.trim();
-
-            const email =
-                document.getElementById("email").value.trim();
-
-            const telefono =
-                document.getElementById("telefono").value.trim();
-
-            const mensaje =
-                document.getElementById("mensaje").value.trim();
+    event.preventDefault();
 
 
-            const subject =
-                "Consulta desde Casa Segura 60+";
+    const nombre =
+        document.getElementById("nombre").value.trim();
+
+    const telefono =
+        document.getElementById("telefono").value.trim();
+
+    const correo =
+        document.getElementById("correo").value.trim();
+
+    const comuna =
+        document.getElementById("comuna").value.trim();
+
+    const vivienda =
+        document.getElementById("vivienda").value;
+
+    const necesidad =
+        document.getElementById("necesidad").value.trim();
 
 
-            const body =
-                "Nombre: " + nombre + "\n\n" +
-                "Email: " + email + "\n\n" +
-                "Teléfono / WhatsApp: " + telefono + "\n\n" +
-                "Consulta:\n" + mensaje;
+    const asunto = encodeURIComponent(
+        "Consulta Casa Segura 60+ - " + nombre
+    );
 
 
-            const mailto =
-                "mailto:contacto@casasegura60.cl" +
-                "?subject=" + encodeURIComponent(subject) +
-                "&body=" + encodeURIComponent(body);
+    const cuerpo = encodeURIComponent(
+
+`Hola Casa Segura 60+,
+
+Me gustaría recibir información sobre adaptación de viviendas.
+
+Nombre: ${nombre}
+
+Teléfono / WhatsApp: ${telefono}
+
+Correo: ${correo}
+
+Comuna: ${comuna}
+
+Tipo de vivienda: ${vivienda}
+
+Necesidad:
+
+${necesidad}
+
+Saludos.`
+
+    );
 
 
-            window.location.href = mailto;
+    window.location.href =
+        "mailto:contacto@casasegura60.cl" +
+        "?subject=" + asunto +
+        "&body=" + cuerpo;
 
-        });
+});
 
 </script>
 
